@@ -30,7 +30,7 @@ test_requirements = [
 ]
 
 setup(
-    name='deepwalk',
+    name='deepwalk_py4jserver',
     version='1.0.3',
     description='DeepWalk online learning of social representations.',
     long_description=readme + '\n\n' + history,
@@ -38,7 +38,7 @@ setup(
     author_email='bperozzi@cs.stonybrook.edu',
     url='https://github.com/phanein/deepwalk',
     packages=[
-        'deepwalk',
+        'deepwalk_py4jserver',
     ],
     entry_points={'console_scripts': ['deepwalk = deepwalk.__main__:main']},
     package_dir={'deepwalk':

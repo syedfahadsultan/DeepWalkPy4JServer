@@ -199,6 +199,19 @@ def parse_adjacencylist_unchecked(f):
   
   return adjlist
 
+def load_py4jclient(relationships, undirected=True):
+
+  rels = list(relationships)
+  G = Graph()
+  for rel in rels:
+    x, y = rel.split("_")
+    G[x].append(y)
+    if undirected:
+      G[y].append(x)
+
+  G.make_consistent()
+  return G
+
 def load_adjacencylist(file_, undirected=False, chunksize=10000, unchecked=True):
 
   if unchecked:
